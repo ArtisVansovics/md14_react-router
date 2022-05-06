@@ -19,15 +19,15 @@ const App = () => (
         </NavLink>
         <NavLink
           className="nav__link"
-          to="/about"
-        >
-          About
-        </NavLink>
-        <NavLink
-          className="nav__link"
           to="/characters"
         >
           Characters
+        </NavLink>
+        <NavLink
+          className="nav__link"
+          to="/about"
+        >
+          About
         </NavLink>
       </nav>
     </header>
@@ -37,12 +37,12 @@ const App = () => (
         element={<HomePage />}
       />
       <Route
-        path="/about"
-        element={<AboutPage />}
-      />
-      <Route
         path="/characters"
         element={<CharactersPage />}
+      />
+      <Route
+        path="/about"
+        element={<AboutPage />}
       />
     </Routes>
   </Router>
