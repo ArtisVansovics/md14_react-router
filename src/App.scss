@@ -12,7 +12,7 @@
 .page {
   display: flex;
   flex-flow: column;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #1C2140;
   color: #F2DD72;
   padding: 30px 40px;
@@ -20,6 +20,7 @@
 
 .page__title {
   color: #F28322;
+  padding-bottom: 20px;
 }
 
 .nav {
@@ -52,4 +53,12 @@
   max-width: 400px;
   height: auto;
   border-radius: 5%;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 32px;
+  width: 100%;
+  justify-content: center;
 }

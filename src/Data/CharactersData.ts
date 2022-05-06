@@ -688,5 +688,11 @@ const characters: Character[] = [
   },
 ];
 
-export default characters;
+export const getCharacters = () => [...characters];
+export const getCharacter = (id: number) => (
+  characters.find((character) => (
+    character.id === id
+  ))
+);
 export type { Character };
+export default characters;

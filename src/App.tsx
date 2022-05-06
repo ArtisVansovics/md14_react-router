@@ -6,6 +6,7 @@ import {
 import HomePage from './Pages/Home/HomePage';
 import AboutPage from './Pages/About/AboutPage';
 import CharactersPage from './Pages/Characters/CharactersPage';
+import CharacterPage from './Pages/Character/CharacterPage';
 
 const App = () => (
   <Router>
@@ -39,6 +40,10 @@ const App = () => (
       <Route
         path="/characters"
         element={<CharactersPage />}
+      />
+      <Route
+        path="/character/:id"
+        element={<CharacterPage />}
       />
       <Route
         path="/about"
