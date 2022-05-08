@@ -1,17 +1,14 @@
-import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import CharacterCard from '../../components/CharacterCard/CharacterCard';
 import { getCharacters, Character } from '../../Data/CharactersData';
-import rickAndMortyTitle from '../../assets/images/rick&morty_title.png';
 
 const CharactersPage = () => {
   const [visibleCharacters, setVisibleCharacters] = useState<Character[]>([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const characters = getCharacters();
     setVisibleCharacters(characters);
-  });
+  }, []);
 
   return (
     <div className="page">
@@ -25,6 +22,7 @@ const CharactersPage = () => {
                   id, image, name, species, gender,
                 }) => (
                   <CharacterCard
+                    key={id}
                     id={id}
                     name={name}
                     image={image}

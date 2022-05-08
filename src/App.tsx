@@ -42,7 +42,7 @@ const App = () => (
         element={<CharactersPage />}
       />
       <Route
-        path="/character/:id"
+        path="/characters/:id"
         element={<CharacterPage />}
       />
       <Route
