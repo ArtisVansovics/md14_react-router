@@ -7,6 +7,7 @@ import HomePage from './Pages/Home/HomePage';
 import AboutPage from './Pages/About/AboutPage';
 import CharactersPage from './Pages/Characters/CharactersPage';
 import CharacterPage from './Pages/Character/CharacterPage';
+import Page404 from './Pages/404/Page404';
 
 const App = () => (
   <Router>
@@ -48,6 +49,14 @@ const App = () => (
       <Route
         path="/about"
         element={<AboutPage />}
+      />
+      <Route
+        path="404"
+        element={<Page404 />}
+      />
+      <Route
+        path="*"
+        element={<Navigate to="/404" />}
       />
     </Routes>
   </Router>
