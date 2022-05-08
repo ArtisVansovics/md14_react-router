@@ -37,7 +37,7 @@ const CharacterCard:FC<CharacterCardProps> = (
             Gender:
           </p>
         </div>
-        <div className="character-card__column flex-end">
+        <div className="character-card__column flex-start">
           <p className="character-card__text">
             {species}
           </p>

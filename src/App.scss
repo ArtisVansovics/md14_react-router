@@ -45,11 +45,10 @@
 }
 
 .card-container {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
   width: 100%;
-  justify-content: center;
 }
 
 .nav {

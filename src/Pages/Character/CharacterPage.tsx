@@ -45,9 +45,11 @@ const CharacterPage = () => {
               <p className="page__text">
                 {`Species: ${currentCharacter?.species}`}
               </p>
-              <p className="page__text">
-                {`Type: ${currentCharacter?.type ? currentCharacter?.type : 'unknown'}`}
-              </p>
+              {currentCharacter?.type && (
+                <p className="page__text">
+                  {`Type: ${currentCharacter?.type}`}
+                </p>
+              )}
               <p className="page__text">
                 {`Gender: ${currentCharacter?.gender}`}
               </p>
