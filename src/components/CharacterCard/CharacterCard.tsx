@@ -8,12 +8,12 @@ type CharacterCardProps = {
   name: string;
   image: string;
   species: string;
-  origin: string;
+  gender: string;
 }
 
 const CharacterCard:FC<CharacterCardProps> = (
   {
-    id, image, name, origin, species,
+    id, image, name, gender, species,
   },
 ) => {
   const navigate = useNavigate();
@@ -28,12 +28,24 @@ const CharacterCard:FC<CharacterCardProps> = (
       <h3 className="character-card__title">
         {name}
       </h3>
-      <p className="character-card__text">
-        {`Species: ${species}`}
-      </p>
-      <p className="character-card__text">
-        {`Origin: ${origin}`}
-      </p>
+      <div className="character-card__row">
+        <div className="character-card__column">
+          <p className="character-card__text">
+            Species:
+          </p>
+          <p className="character-card__text">
+            Gender:
+          </p>
+        </div>
+        <div className="character-card__column flex-end">
+          <p className="character-card__text">
+            {species}
+          </p>
+          <p className="character-card__text">
+            {gender}
+          </p>
+        </div>
+      </div>
       <Button
         title="Learn More"
         onClick={() => navigate(`/characters/${id}`)}

@@ -22,13 +22,13 @@ const CharactersPage = () => {
               <h1 className="page__title">Characters</h1>
               <div className="card-container">
                 {visibleCharacters.map(({
-                  id, image, name, species, origin,
+                  id, image, name, species, gender,
                 }) => (
                   <CharacterCard
                     id={id}
                     name={name}
                     image={image}
-                    origin={origin.name}
+                    gender={gender}
                     species={species}
                   />
                 ))}
