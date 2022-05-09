@@ -4,10 +4,11 @@ import './Button.scss';
 type ButtonProps = {
   title: string
   onClick: () => void
+  disabled?: boolean
 }
 
-const Button:FC<ButtonProps> = ({ title, onClick }) => (
-  <button className="button" onClick={onClick}>
+const Button:FC<ButtonProps> = ({ title, onClick, disabled }) => (
+  <button className="button" onClick={onClick} disabled={disabled}>
     {title}
   </button>
 );

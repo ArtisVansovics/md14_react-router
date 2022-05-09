@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getCharacter, Character } from '../../Data/CharactersData';
+import characters, { getCharacter, Character } from '../../Data/CharactersData';
+import Button from '../../components/Button/Button';
 
 const CharacterPage = () => {
   const navigate = useNavigate();
@@ -15,7 +16,10 @@ const CharacterPage = () => {
     } else {
       navigate('/characters');
     }
-  }, []);
+  }, [id]);
+
+  const prevCharacter = Number(id) - 1;
+  const nextCharacter = Number(id) + 1;
 
   return (
     <div className="page">
@@ -24,6 +28,26 @@ const CharacterPage = () => {
           <div className="col-xs-12">
             <div className="box">
               <h1 className="page__title">{currentCharacter?.name}</h1>
+              <div className="row center-xs">
+                <div className="col-xs-12 col-sm-6">
+                  <div className="box">
+                    <Button
+                      title="Previous Character"
+                      onClick={() => navigate(`/characters/${prevCharacter}`)}
+                      disabled={prevCharacter === 0}
+                    />
+                  </div>
+                </div>
+                <div className="col-xs-12 col-sm-6">
+                  <div className="box">
+                    <Button
+                      title="Next Character"
+                      onClick={() => navigate(`/characters/${nextCharacter}`)}
+                      disabled={nextCharacter === characters.length + 1}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
